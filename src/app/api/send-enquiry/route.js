@@ -31,7 +31,7 @@ export async function POST(request) {
         <h2>New Product Enquiry for ${product_title}</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Product URL:</strong> <a href="${product_url}">${product_url}</a></p>
+        <div><strong>Product URL:</strong> <a href="${product_url}">${product_url}</a></div>
         <p><strong>Message:</strong></p>
         <p>${message}</p>
       `
