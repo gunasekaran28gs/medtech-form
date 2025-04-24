@@ -3,9 +3,9 @@ import nodemailer from 'nodemailer';
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { name, email, message, product_title, product_url, seller_email } = body;
+    const { name, email, message, phone, product_title, product_url, product_variant, seller_email } = body;
 
-    if (!name || !email || !message || !product_title || !product_url || !seller_email) {
+    if (!name || !email || !message || !phone || !product_title || !product_url || !product_variant || !seller_email) {
       return Response.json({ success: false, error: 'Missing required fields' }, { status: 400 });
     }
 
@@ -31,7 +31,9 @@ export async function POST(request) {
         <h2>New Product Enquiry for ${product_title}</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
         <div><strong>Product URL:</strong> <a href="${product_url}">${product_url}</a></div>
+        <div><strong>Product Variant:</strong> ${product_variant}</div>
         <p><strong>Message:</strong></p>
         <p>${message}</p>
       `
