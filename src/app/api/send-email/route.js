@@ -31,7 +31,7 @@ export async function POST(request) {
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Phone:</strong> ${phone}</p>
       <div><strong>Product URL:</strong> <a href="${product_url}">${product_url}</a></div>
-
+      <br/>
       <div><strong>Product Variant:</strong> ${product_variant}</div>
       <p><strong>Message:</strong></p>
       <p>${message}</p>
