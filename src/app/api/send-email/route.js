@@ -17,7 +17,7 @@ export async function POST(request) {
     const bodyData = await request.json();
     const { name, email, message, phone, product_title, product_url, product_variant, seller_email } = bodyData;
 
-    if (!name || !email || !message || !phone || !product_title || !product_url || !product_variant || !seller_email) {
+    if (!name || !email || !message || !phone || !product_title || !product_url || !seller_email) {
       return NextResponse.json({ success: false, error: 'Missing required fields' }, { status: 400 });
     }
 
