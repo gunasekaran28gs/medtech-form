@@ -21,6 +21,10 @@ export async function POST(request) {
       return NextResponse.json({ success: false, error: 'Missing required fields' }, { status: 400 });
     }
 
+    if(product_variant == null){
+      product_variant = "No variants available for this product";
+    }
+
     const { accessToken } = await cca.acquireTokenByClientCredential({
       scopes: ['https://graph.microsoft.com/.default'],
     });
