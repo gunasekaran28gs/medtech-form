@@ -15,7 +15,7 @@ const cca = new ConfidentialClientApplication(msalConfig);
 export async function POST(request) {
   try {
     const bodyData = await request.json();
-    const { name, email, message, phone, product_title, product_url, product_variant, seller_email } = bodyData;
+    const { name, email, message, company, phone, product_title, product_url, product_variant, seller_email } = bodyData;
 
     if (!name || !email || !message || !phone || !product_title || !product_url || !seller_email) {
       return NextResponse.json({ success: false, error: 'Missing required fields' }, { status: 400 });
@@ -34,6 +34,7 @@ export async function POST(request) {
       <p><strong>Name:</strong> ${name}</p>
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Phone:</strong> ${phone}</p>
+      <p><strong>Company/Hospital/Institution:</strong> ${company}</p>
       <div><strong>Product URL:</strong> <a href="${product_url}">${product_url}</a></div>
       <br/>
       <div><strong>Product Variant:</strong> ${product_variant}</div>
